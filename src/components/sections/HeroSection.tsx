@@ -235,16 +235,32 @@ export default function HeroSection() {
               transition={{ duration: 0.7, delay: 0.3 }}
               style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}
             >
-              <Button size="lg" icon={<ShoppingBag size={18} />} iconRight={<ArrowRight size={16} />}>
-                <Link href="/search" style={{ textDecoration: "none", color: "inherit" }}>
-                  Start Shopping
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" icon={<Store size={18} />}>
-                <Link href="/sell" style={{ textDecoration: "none", color: "inherit" }}>
-                  Become a Seller
-                </Link>
-              </Button>
+              <Link href="/search" style={{
+  display: "inline-flex", alignItems: "center", gap: "10px",
+  padding: "12px 24px", borderRadius: "14px",
+  background: "#f97316", color: "#fff",
+  fontFamily: "'Clash Display', sans-serif",
+  fontWeight: 600, fontSize: "16px",
+  textDecoration: "none",
+  boxShadow: "0 0 30px rgba(249,115,22,0.4)",
+}}>
+  <ShoppingBag size={18} />
+  Start Shopping
+  <ArrowRight size={16} />
+</Link>
+
+<Link href="/sell" style={{
+  display: "inline-flex", alignItems: "center", gap: "10px",
+  padding: "14px 28px", borderRadius: "14px",
+  background: "transparent", color: "#fb923c",
+  fontFamily: "'Clash Display', sans-serif",
+  fontWeight: 600, fontSize: "16px",
+  textDecoration: "none",
+  border: "2px solid rgba(249,115,22,0.4)",
+}}>
+  <Store size={18} />
+  Become a Seller
+</Link>
             </motion.div>
 
             {/* Stats */}
@@ -269,113 +285,109 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* ── RIGHT ── */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            style={{
-              position: "relative",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "480px",
-            }}
-          >
-            {/* Glow */}
-            <div style={{
-              position: "absolute",
-              width: "260px", height: "260px", borderRadius: "50%",
-              background: "radial-gradient(circle, rgba(249,115,22,0.18), transparent 70%)",
-              filter: "blur(40px)", pointerEvents: "none", zIndex: 0,
-            }} />
+        {/* ── RIGHT ── */}
+<motion.div
+  initial={{ opacity: 0, x: 40 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.9, delay: 0.2 }}
+  style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+>
+  {/* Fixed size box — sab kuch iske andar */}
+  <div style={{ position: "relative", width: "460px", height: "460px", display: "flex", justifyContent: "center", alignItems: "center" }}>
 
-            {/* Orbit rings */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              style={{
-                position: "absolute", zIndex: 1,
-                width: "300px", height: "300px", borderRadius: "50%",
-                border: "1px dashed rgba(249,115,22,0.12)",
-                pointerEvents: "none",
-              }}
-            />
-            <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-              style={{
-                position: "absolute", zIndex: 1,
-                width: "420px", height: "420px", borderRadius: "50%",
-                border: "1px dashed rgba(14,165,233,0.08)",
-                pointerEvents: "none",
-              }}
-            />
+    {/* Glow */}
+    <div style={{
+      position: "absolute", width: "200px", height: "200px", borderRadius: "50%",
+      background: "radial-gradient(circle, rgba(249,115,22,0.2), transparent 70%)",
+      filter: "blur(40px)", pointerEvents: "none",
+    }} />
 
-            {/* Phone — center */}
-            <div style={{ position: "relative", zIndex: 5 }}>
-              <PhoneMockup />
-            </div>
+    {/* Orbit ring 1 */}
+    <motion.div
+      animate={{ rotate: 360 }}
+      transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+      style={{
+        position: "absolute", width: "260px", height: "260px", borderRadius: "50%",
+        border: "1px dashed rgba(249,115,22,0.15)", pointerEvents: "none",
+      }}
+    />
 
-            {/* TOP LEFT card */}
-            <div style={{ position: "absolute", top: "6%", left: "0%", zIndex: 10 }}>
-              <FloatingCard delay={0.4}>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "rgba(34,197,94,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <TrendingUp size={16} color="#22c55e" />
-                  </div>
-                  <div>
-                    <p style={{ color: "#94a3b8", fontSize: "10px", margin: 0 }}>Today's Sales</p>
-                    <p style={{ color: "#22c55e", fontSize: "15px", fontWeight: 700, margin: 0 }}>+Rs. 24,500</p>
-                  </div>
-                </div>
-              </FloatingCard>
-            </div>
+    {/* Orbit ring 2 */}
+    <motion.div
+      animate={{ rotate: -360 }}
+      transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+      style={{
+        position: "absolute", width: "360px", height: "360px", borderRadius: "50%",
+        border: "1px dashed rgba(14,165,233,0.1)", pointerEvents: "none",
+      }}
+    />
 
-            {/* TOP RIGHT card */}
-            <div style={{ position: "absolute", top: "6%", right: "0%", zIndex: 10 }}>
-              <FloatingCard delay={0.6}>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "rgba(249,115,22,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <Package size={16} color="#f97316" />
-                  </div>
-                  <div>
-                    <p style={{ color: "#94a3b8", fontSize: "10px", margin: 0 }}>Orders Today</p>
-                    <p style={{ color: "#fff", fontSize: "15px", fontWeight: 700, margin: 0 }}>142 Orders</p>
-                  </div>
-                </div>
-              </FloatingCard>
-            </div>
+    {/* Phone — center */}
+    <div style={{ position: "relative", zIndex: 5 }}>
+      <PhoneMockup />
+    </div>
 
-            {/* BOTTOM LEFT card */}
-            <div style={{ position: "absolute", bottom: "6%", left: "0%", zIndex: 10 }}>
-              <FloatingCard delay={0.8} floatY={5}>
-                <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={12} color="#f97316" fill="#f97316" />
-                  ))}
-                  <span style={{ color: "#e2e8f0", fontSize: "12px", fontWeight: 600 }}>4.9</span>
-                </div>
-                <p style={{ color: "#64748b", fontSize: "10px", margin: 0 }}>12,000+ happy buyers</p>
-              </FloatingCard>
-            </div>
+    {/* TOP LEFT */}
+    <div style={{ position: "absolute", top: "20px", left: "-10px", zIndex: 10 }}>
+      <FloatingCard delay={0.4}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <div style={{ width: "32px", height: "32px", borderRadius: "9px", background: "rgba(34,197,94,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <TrendingUp size={14} color="#22c55e" />
+          </div>
+          <div>
+            <p style={{ color: "#94a3b8", fontSize: "10px", margin: 0 }}>Today's Sales</p>
+            <p style={{ color: "#22c55e", fontSize: "13px", fontWeight: 700, margin: 0 }}>+Rs. 24,500</p>
+          </div>
+        </div>
+      </FloatingCard>
+    </div>
 
-            {/* BOTTOM RIGHT card */}
-            <div style={{ position: "absolute", bottom: "6%", right: "0%", zIndex: 10 }}>
-              <FloatingCard delay={1.0} floatY={5}>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "rgba(14,165,233,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <Shield size={16} color="#0ea5e9" />
-                  </div>
-                  <div>
-                    <p style={{ color: "#94a3b8", fontSize: "10px", margin: 0 }}>Buyer Protection</p>
-                    <p style={{ color: "#0ea5e9", fontSize: "13px", fontWeight: 700, margin: 0 }}>100% Secure</p>
-                  </div>
-                </div>
-              </FloatingCard>
-            </div>
+    {/* TOP RIGHT */}
+    <div style={{ position: "absolute", top: "20px", right: "-10px", zIndex: 10 }}>
+      <FloatingCard delay={0.6}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <div style={{ width: "32px", height: "32px", borderRadius: "9px", background: "rgba(249,115,22,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <Package size={14} color="#f97316" />
+          </div>
+          <div>
+            <p style={{ color: "#94a3b8", fontSize: "10px", margin: 0 }}>Orders Today</p>
+            <p style={{ color: "#fff", fontSize: "13px", fontWeight: 700, margin: 0 }}>142 Orders</p>
+          </div>
+        </div>
+      </FloatingCard>
+    </div>
 
-          </motion.div>
+    {/* BOTTOM LEFT */}
+    <div style={{ position: "absolute", bottom: "20px", left: "-10px", zIndex: 10 }}>
+      <FloatingCard delay={0.8} floatY={5}>
+        <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "3px" }}>
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} size={11} color="#f97316" fill="#f97316" />
+          ))}
+          <span style={{ color: "#e2e8f0", fontSize: "11px", fontWeight: 600 }}>4.9</span>
+        </div>
+        <p style={{ color: "#64748b", fontSize: "10px", margin: 0 }}>12,000+ happy buyers</p>
+      </FloatingCard>
+    </div>
+
+    {/* BOTTOM RIGHT */}
+    <div style={{ position: "absolute", bottom: "20px", right: "-10px", zIndex: 10 }}>
+      <FloatingCard delay={1.0} floatY={5}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <div style={{ width: "32px", height: "32px", borderRadius: "9px", background: "rgba(14,165,233,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <Shield size={14} color="#0ea5e9" />
+          </div>
+          <div>
+            <p style={{ color: "#94a3b8", fontSize: "10px", margin: 0 }}>Buyer Protection</p>
+            <p style={{ color: "#0ea5e9", fontSize: "12px", fontWeight: 700, margin: 0 }}>100% Secure</p>
+          </div>
+        </div>
+      </FloatingCard>
+    </div>
+
+  </div>
+</motion.div>
+
         </div>
       </div>
     </section>

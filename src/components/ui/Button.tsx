@@ -28,20 +28,21 @@ const base = [
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500",
   "disabled:opacity-50 disabled:cursor-not-allowed",
   "overflow-hidden cursor-pointer select-none",
+  "tracking-wide",  
 ].join(" ");
 
 const variants: Record<Variant, string> = {
   primary:   "bg-brand-500 text-white hover:bg-brand-600 active:bg-brand-700 shadow-glow-orange",
   secondary: "bg-shark-500/10 text-shark-500 border border-shark-500/30 hover:bg-shark-500/20",
   ghost:     "bg-transparent text-slate-300 hover:bg-white/5 hover:text-white",
-  outline:   "bg-transparent text-brand-400 border border-brand-500/40 hover:bg-brand-500/10 hover:text-brand-300",
+  outline: "bg-transparent text-brand-400 border-2 border-brand-500/40 hover:bg-brand-500/10 hover:text-brand-300",
   danger:    "bg-red-500/10 text-red-400 border border-red-500/30 hover:bg-red-500/20",
 };
 
 const sizes: Record<Size, string> = {
-  sm:   "h-8  px-3 text-sm gap-1.5",
-  md:   "h-10 px-5 text-sm",
-  lg:   "h-12 px-8 text-base gap-2",
+  sm:   "h-8  px-4 text-sm  gap-2",
+  md:   "h-10 px-6 text-sm  gap-2",
+  lg:   "h-12 px-10 text-base gap-3",
   icon: "h-10 w-10 p-0",
 };
 

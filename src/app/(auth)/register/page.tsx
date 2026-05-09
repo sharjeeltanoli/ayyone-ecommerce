@@ -5,7 +5,7 @@ const RegisterPage = () => {
   return (
     <div>
       <h1>Register Page</h1>
-      {/* Aapka register form yahan aayega */}
+   
     </div>
   )
 }
