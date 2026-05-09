@@ -89,9 +89,10 @@ export default function CategoryGrid() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          style={{
+          className="grid-responsive-categories"
+style={{
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+  gridTemplateColumns: "repeat(6, 1fr)",
   gap: "16px",
 }}
         >

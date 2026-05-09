@@ -90,17 +90,12 @@ export default function FeaturedProducts() {
 
         {/* Grid */}
         <motion.div
-          key={activeTab}
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          style={{
-  display: "grid",
-  gridTemplateColumns: "repeat(4, 1fr)",
-  gap: "20px",
-  alignItems: "stretch",
-}}
-        >
+  key={activeTab}
+  variants={container}
+  initial="hidden"
+  animate="visible"
+  className="grid-responsive-products"
+>
           {filtered.map((product) => (
             <motion.div key={product.id} variants={item} style={{ height: "100%" }}>
   <ProductCard product={product} />
