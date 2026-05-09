@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
+import { Variants, Transition } from "framer-motion";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -37,12 +38,18 @@ const backdropVariants = {
   visible: { opacity: 1 },
 };
 
-const modalVariants = {
+const modalVariants: Variants = {
   hidden:  { opacity: 0, scale: 0.92, y: 20 },
-  visible: { opacity: 1, scale: 1,    y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 25 }
+  visible: { 
+    opacity: 1, scale: 1, y: 0,
+    transition: { 
+      type: "spring" as const, 
+      stiffness: 300, 
+      damping: 25 
+    }
   },
-  exit:    { opacity: 0, scale: 0.92, y: 20,
+  exit: { 
+    opacity: 0, scale: 0.92, y: 20,
     transition: { duration: 0.2 }
   },
 };
